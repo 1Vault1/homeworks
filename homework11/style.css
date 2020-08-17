@@ -98,9 +98,33 @@ body {
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
-  background: #A6A7B0;
+  background: #ff9900;
   color: #fff;
   min-height: 39px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.done {
+  background: #089128;
+}
+
+.remove-btn {
+  width: max-content;
+  height: max-content;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+  outline: none;
+}
+
+.remove-btn:hover {
+  background: rgba(255,255,255, .2)
 }
 
 /* scroll */
