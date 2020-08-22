@@ -4,11 +4,11 @@ function createCalculator(number) {
   let result = number;
 
   return {
-    sum: (number) => console.log(result += number),
-    sub: (number) => console.log(result -= number),
-    mult: (number) => console.log(result *= number),
-    div: (number) => console.log(result /= number),
-    set: (number) => console.log(result = number),
+    sum: (number) => result += number,
+    sub: (number) => result -= number,
+    mult: (number) => result *= number,
+    div: (number) => result /= number,
+    set: (number) => result = number,
   }
 }
 
@@ -17,25 +17,25 @@ function createCalculator(number) {
 
 //   return {
 //     sum: function (number) {
-//       console.log(result += number);
+//       return result += number
 //     },
 //     sub: function (number) {
-//       console.log(result -= number);
+//       return result -= number
 //     },
 //     mult: function (number) {
-//       console.log(result *= number);
+//       return result *= number
 //     },
 //     div: function (number) {
-//       console.log(result /= number);
+//       return result /= number
 //     },
 //     set: function (number) {
-//       console.log(result = number);
+//       return result = number;
 //     },
 //   }
 // }
 
-calculator.sum(5);
-calculator.mult(10);
-calculator.sub(40);
-calculator.div(10);
-calculator.set(100);
+console.log(calculator.sum(5));
+console.log(calculator.mult(10));
+console.log(calculator.sub(40));
+console.log(calculator.div(10));
+console.log(calculator.set(100));
