@@ -3,31 +3,27 @@ function Calculator(baseValue) {
   let expretion = this.baseValue;
 
   this.sum = function (number) {
-    return (
-      expretion += ' + ' + number,
-      this.baseValue += number
-    )
+    expretion += ' + ' + number;
+
+    return this.baseValue += number
   };
 
   this.sub = function (number) {
-    return (
-      expretion += ' - ' + number,
-      this.baseValue -= number
-    )
+    expretion += ' - ' + number;
+
+    return this.baseValue -= number
   };
 
   this.mult = function (number) {
-    return (
-      expretion += ' * ' + number,
-      this.baseValue *= number
-    )
+    expretion += ' * ' + number;
+
+    return this.baseValue *= number
   };
 
   this.div = function (number) {
-    return (
-      expretion += ' / ' + number,
-      this.baseValue /= number
-    )
+    expretion += ' / ' + number;
+
+    return this.baseValue /= number
   };
 
   this.set = function (number) {
