@@ -5,28 +5,24 @@ const person = {
 };
 
 function createTemplate(str) {
-  let newString;
 
   let getNewString = function (obj) {
 
     Object.keys(obj).map(function (key) {
-      if (str.includes(key)) {
-        str = str.replace(`{{${key}}}`, obj[key]);
-      }
+      str = str.replace(`{{${key}}}`, obj[key]);
     });
 
-    newString = str;
-
-    return newString
+    return str
   }
 
   return getNewString
+
 }
 
 const helloTemplate = createTemplate(`Hello {{name}}`);
 
 console.log(helloTemplate(person));
 
-const detailsTemplate = createTemplate(`{{name}} {{surname}}, {{phone}} `);
+const detailsTemplate = createTemplate(`{{name}} {{name}} {{surname}}, {{phone}} `);
 
 console.log(detailsTemplate(person));
