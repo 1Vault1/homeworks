@@ -3,9 +3,9 @@ function Student(name, marks) {
   this.marks = marks;
 }
 
-Student.prototype.avarageMark = function () {
-  this.marks = (this.marks.reduce((sum, num) => sum + num) / this.marks.length).toFixed(1);
-  return `${this.name} - ${this.marks}`
+Student.prototype.getAvarageMark = function () {
+  let avarageMark = (this.marks.reduce((sum, num) => sum + num) / this.marks.length).toFixed(1);
+  return `${this.name} - ${avarageMark}`
 }
 
 const students = [
@@ -16,8 +16,8 @@ const students = [
 // const john = new Student('John', [10, 10, 9, 9]);
 // const bob = new Student('Bob', [10, 5, 5, 5, 10, 5, 8]);
 
-// console.log(john.avarageMark());
-// console.log(bob.avarageMark())
+// console.log(john.getAvarageMark());
+// console.log(bob.getAvarageMark())
 
-console.log(students[0].avarageMark())
-console.log(students[1].avarageMark())
+console.log(students[0].getAvarageMark())
+console.log(students[1].getAvarageMark())
