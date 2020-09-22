@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="main">
+    <section class="contacts-holder">
+      <div class="container">
+        <div id="contactsList" class="contacts-list">
+          <div class="row">
+            <div class="head-item">
+              <p>Name</p>
+            </div>
+            <div class="head-item">
+              <p>Number</p>
+            </div>
+            <div class="head-item">
+              <p>Email</p>
+            </div>
+            <div class="head-item">
+              <p>Action</p>
+            </div>
+          </div>
+        </div>
+        <form id="addContactForm" class="input-holder">
+          <input id="contactsInputName" class="input-item" type="text" placeholder="Name">
+          <input id="contactsInputNumber" class="input-item" type="text" placeholder="Number">
+          <input id="contactsInputEmail" class="input-item" type="text" placeholder="Email">
+          <button id="addButton" class="add-button" type="submit">+</button>
+          <div id="contactsError" class="error">
+            <p>all fields must be filled</p>
+          </div>
+        </form>
+      </div>
+  </main>
+
+  <script type="text/template" id="contactsItemTemplate">
+    <div class="row" data-contact-id="{{id}}">
+      <div class="item-holder">
+        <div class="item item-name">
+          <p>{{name}}</p>
+        </div>
+        <div class="item item-phone">
+          <p>{{phone}}</p>
+        </div>
+        <div class="item item-email">
+          <p>{{email}}</p>
+        </div>
+        <div class="item">
+          <button class="remove-btn">X</button>
+        </div>
+      </div>
+    </div>
+  </script>
+</body>
+
+</html>
