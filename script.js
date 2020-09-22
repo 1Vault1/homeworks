@@ -45,11 +45,12 @@ function submitForm() {
 }
 
 function addContact(obj) {
-  contactList.push(obj);
-
   if (validateForm(obj)) {
+    contactList.push(obj);
+
     saveData();
     renderContact(obj);
+
     contactsError.style.opacity = '0';
   }
 }
