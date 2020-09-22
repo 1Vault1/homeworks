@@ -1,7 +1,7 @@
 const CONTACTS_ITEM_CLASS = '.row';
 const DELETE_BTN_CLASS = 'remove-btn';
 
-const addButtonEl = document.getElementById('addButton');
+const addContactForm = document.getElementById('addContactForm');
 const contactsListEl = document.getElementById('contactsList');
 const contactsInputName = document.getElementById('contactsInputName');
 const contactsInputNumber = document.getElementById('contactsInputNumber');
@@ -11,12 +11,12 @@ const contactsError = document.getElementById('contactsError');
 
 let contactList = [];
 
-addButtonEl.addEventListener('click', onAddButtonElClick);
+addContactForm.addEventListener('submit', onAddContactForm);
 contactsListEl.addEventListener('click', onContactsListElClick);
 
 init();
 
-function onAddButtonElClick(event) {
+function onAddContactForm(event) {
   event.preventDefault();
 
   submitForm();
@@ -42,6 +42,7 @@ function submitForm() {
   };
 
   addContact(contact);
+  resetForm();
 }
 
 function addContact(obj) {
@@ -55,8 +56,12 @@ function addContact(obj) {
   }
 }
 
+function resetForm() {
+  addContactForm.reset();
+}
+
 function renderContacts() {
-  contactList.forEach((contact) => renderContact(contact))
+  contactList.forEach((contact) => renderContact(contact));
 }
 
 function renderContact(obj) {
@@ -94,7 +99,7 @@ function deleteTask(el) {
 }
 
 function saveData() {
-  localStorage.setItem('contactList', JSON.stringify(contactList))
+  localStorage.setItem('contactList', JSON.stringify(contactList));
 }
 
 function restoreData() {
