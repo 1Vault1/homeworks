@@ -1,4 +1,5 @@
 const CONTACTS_ITEM_CLASS = '.row';
+const VISIBLE_ERROR_CLASS = 'visible';
 const DELETE_BTN_CLASS = 'remove-btn';
 
 const addContactForm = document.getElementById('addContactForm');
@@ -52,7 +53,7 @@ function addContact(obj) {
     saveData();
     renderContact(obj);
 
-    contactsError.style.opacity = '0';
+    removeClass(contactsError, VISIBLE_ERROR_CLASS);
   }
 }
 
@@ -78,12 +79,12 @@ function renderContact(obj) {
 function validateForm(obj) {
   let valid = true;
 
-  Object.keys(obj).find(function (key) {
-    if (obj[key].length === 0) {
-      contactsError.style.opacity = '1';
-      return valid = false;
-    }
-  });
+  const invalidKey = Object.keys(obj).find((key) => obj[key].length === 0);
+
+  if (invalidKey) {
+    addClass(contactsError, VISIBLE_ERROR_CLASS);
+    valid = false;
+  }
 
   return valid
 }
@@ -105,4 +106,12 @@ function saveData() {
 function restoreData() {
   const data = localStorage.getItem('contactList');
   contactList = data ? JSON.parse(data) : [];
+}
+
+function addClass(el, classItem) {
+  el.classList.add(classItem);
+}
+
+function removeClass(el, classItem) {
+  el.classList.remove(classItem);
 }
