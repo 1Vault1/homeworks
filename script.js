@@ -66,12 +66,7 @@ function renderContacts() {
 }
 
 function renderContact(obj) {
-  let html = contactsItemTemplate;
-
-  Object.keys(obj).forEach(function (key) {
-    html = html.replace(`{{${key}}}`, obj[key]);
-    return html
-  });
+  const html = Object.keys(obj).reduce((template, key) => template.replace('{{' + key + '}}', obj[key]), contactsItemTemplate);
 
   return contactsListEl.insertAdjacentHTML('beforeend', html);
 }
