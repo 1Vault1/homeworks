@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="main">
+    <section class="students-holder">
+      <div class="container">
+        <div id="studentsList" class="students-list">
+          <div class="row">
+            <div class="head-item">
+              <p>Name</p>
+            </div>
+            <div class="head-item">
+              <p>Marks</p>
+            </div>
+            <div class="head-item">
+              <p>Average mark</p>
+            </div>
+            <div class="head-item">
+              <p>Action</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row bottom-row">
+          <div class="item">
+            <p>Avarage mark all group</p>
+          </div>
+          <div id="avarageMarkAll" class="item">
+
+          </div>
+        </div>
+
+        <form id="addStudentForm" class="input-holder">
+          <input id="studentsInputName" class="input-item" type="text" placeholder="Name">
+          <input id="studentsInputMarks" class="input-item" type="text" placeholder="Marks">
+          <button id="addButton" class="add-button" type="submit">+</button>
+        </form>
+      </div>
+  </main>
+
+  <script type="text/template" id="studentsItemTemplate">
+    <div class="row" data-id="{{id}}">
+      <div class="item-holder">
+        <div class="item">
+          <p>{{name}}</p>
+        </div>
+        <div class="item">
+          <p>{{marks}}</p>
+        </div>
+        <div class="item">
+          <p>{{avarageMark}}</p>
+        </div>
+        <div class="item">
+          <button class="remove-btn">X</button>
+        </div>
+      </div>
+    </div>
+  </script>
+</body>
+
+</html>
