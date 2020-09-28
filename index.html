@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src='script.js' defer></script>
+</head>
+
+<body>
+  <main class="main">
+    <section class="albums-holder">
+      <div class="container">
+        <div id="albums" class="albums"></div>
+        <div id="photos" class="photos"></div>
+      </div>
+  </main>
+
+
+  <script type="text/template" id="albumsTemplate">
+      <div class="title-album" data-id="{{id}}">
+          {{title}}
+      </div>
+  </script>
+
+  <script type="text/template" id="photosTemplate">
+      <div class="photos">
+          <img src="{{url}}" alt="image">
+      </div>
+  </script>
+</body>
+
+</html>
