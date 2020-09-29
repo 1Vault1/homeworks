@@ -14,11 +14,7 @@ const photosEl = document.getElementById('photos');
 
 albumsEl.addEventListener('click', onAlbumsElClick);
 
-init();
-
-function init() {
-  addAlbums().then(addFirstPhotos);
-}
+addAlbums().then(addFirstPhotos);
 
 function onAlbumsElClick(e) {
   if (e.target.classList.contains(TITLE_ALBUM_CLASS)) {
@@ -40,7 +36,7 @@ function addAlbums() {
 }
 
 function renderAlbumList(list) {
-  list.forEach((item) => renderAlbum(item));
+  return list.forEach((item) => renderAlbum(item));
 }
 
 function renderAlbum(item) {
@@ -53,7 +49,7 @@ function renderAlbum(item) {
 }
 
 function addPhotos(id) {
-  fetch(urlPhotos.replace('{{id}}', id))
+  return fetch(urlPhotos.replace('{{id}}', id))
     .then((res) => res.json())
     .then(renderPhotosList);
 }
@@ -63,6 +59,8 @@ function renderPhotosList(photos) {
 }
 
 function renderPhotos(item) {
-  return photosTemplate
-    .replace('{{url}}', item.thumbnailUrl);
+  return Object.keys(item).reduce(
+    (template, key) => template.replace('{{' + key + '}}', item[key]),
+    photosTemplate
+  );
 }
