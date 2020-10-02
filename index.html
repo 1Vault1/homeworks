@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="main">
+    <section class="contacts-holder">
+      <div class="container">
+        <div class="contacts-list">
+          <div class="row head-row">
+            <div class="head-item">
+              <p>Name</p>
+            </div>
+            <div class="head-item">
+              <p>Surname</p>
+            </div>
+            <div class="head-item">
+              <p>Phone</p>
+            </div>
+            <div class="head-item">
+              <p>Action</p>
+            </div>
+          </div>
+          <div id="contactsList" class="list">
+
+          </div>
+        </div>
+        <form id="addContactForm" class="input-holder">
+          <input id="contactsInputName" class="input-item" type="text" placeholder="Name">
+          <input id="contactsInputSurname" class="input-item" type="text" placeholder="Surname">
+          <input id="contactsInputPhone" class="input-item" type="text" placeholder="Phone">
+          <button id="addButton" class="add-button" type="submit">+</button>
+          <div id="contactsError" class="error">
+            <p>all fields must be filled</p>
+          </div>
+        </form>
+      </div>
+  </main>
+
+  <script type="text/template" id="contactsItemTemplate">
+    <div class="row" data-id="{{id}}">
+      <div class="item" data-input-name="contactsInputName">{{name}}</div>
+        <div class="item" data-input-surname="contactsInputSurname">{{surname}}</div>
+        <div class="item" data-input-phone="contactsInputPhone">{{phone}}</div>
+        <div class="item">
+          <button class="edit-btn">edit</button>
+          <button class="remove-btn">X</button>
+        </div>
+    </div>
+  </script>
+</body>
+
+</html>
