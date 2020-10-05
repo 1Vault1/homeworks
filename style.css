@@ -1,0 +1,137 @@
+*{
+  box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #fefefe;
+  background-image: linear-gradient(#849ED2 0%, #123269 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.item {
+  width: 100%;
+  max-width: 220px;
+  max-height: 200px;
+  background: #123269;
+  border-radius: 4px;
+  padding: 10px 0;
+  margin: 0 10px 10px;
+}
+
+.button-holder {
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 10px;
+}
+
+.textarea {
+  display: block;
+  width: max-content;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #A2B9D6;
+  transition: all 1s ease-out;
+  font-size: 16px;
+  color: #fff;
+  margin: 10px 10px 0;
+}
+
+.textarea :focus {
+  box-shadow: 0 0 10px #133167;
+}
+
+.textarea ::placeholder {
+  color: #fff;
+}
+
+.header {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.list-holder {
+  padding: 15px;
+  border-radius: 4px;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap ;
+}
+
+.button {
+  padding: 5px 10px;
+  background: #445f8e;
+  border-radius: 4px;
+  color: #fff;
+  min-width: 40px;
+  width: max-content;
+  cursor: pointer;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  transition: all 1s ease-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px #133167;
+}
+
+.remove-btn {
+  width: max-content;
+  height: max-content;
+  background: #BAC0D2;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  transition: all 1s ease-out;
+}
+
+.remove-btn:hover {
+  opacity: 0.6;
+} 
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
