@@ -34,9 +34,15 @@ function onlistItemsEl(e) {
 }
 
 function onChangelistItemsEl(e) {
+  const element = e.target;
+
   switch (true) {
-    case e.target.classList.contains(TEXTAREA_CLASS):
-      findItem(e.target.closest('.' + ITEM_CLASS).dataset.id);
+    case element.classList.contains(TEXTAREA_CLASS):
+      updateTextarea(
+        element.closest('.' + ITEM_CLASS).dataset.id,
+        element.name,
+        element.value
+      );
       break;
   }
 }
@@ -75,28 +81,18 @@ function addItem() {
     });
 }
 
-function findItem(id) {
-  const item = itemsList.find((el) => el.id == id);
+function updateTextarea(id, name, value) {
+  const note = itemsList.find((el) => el.id == id);
 
-  updateTextarea(item);
-}
+  note[name] = value;
 
-function updateTextarea(item) {
-  for (let i = 0; i < textareaEl.length; i++) {
-    item.description = textareaEl[i].value;
-  }
-
-  fetch(`${URL}/${item.id}`, {
+  fetch(`${URL}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(item),
+    body: JSON.stringify(note),
   });
-
-  itemsList = itemsList.map((el) => (el.id != item.id ? el : item));
-
-  renderItems(itemsList);
 }
 
 function removeItem(id) {
