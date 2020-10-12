@@ -6,14 +6,37 @@ $(() => {
   const URL = 'https://5dd3d5ba8b5e080014dc4bfa.mockapi.io/stickers';
 
   const $addBtnEl = $('#addBtn');
-  const $stickerTemplate = $('#stickerTemplate').html();
-  const $listItemsEl = $('#listItems');
+  const stickerTemplate = $('#stickerTemplate').html();
+  const $listItemsEl = $('#listItems')
+    .on('click', '.' + REMOVE_BTN_CLASS, onRemoveBtnClick)
+    .on('change', '.' + TEXTAREA_CLASS, onChangelistItemsEl);
+
+  const $newNoteDescription = $('#newNoteDescription');
+  const $dialog = $('#dialogForm').dialog({
+    autoOpen: false,
+    modal: true,
+    resizable: false,
+    close: () => {
+      $newNoteDescription.val('');
+    },
+    buttons: {
+      Save: () => {
+        const item = {
+          description: $newNoteDescription.val()
+        };
+
+        addItem(item);
+        $dialog.dialog('close');
+      },
+      Cancel: () => {
+        $dialog.dialog('close');
+      },
+    },
+  });
 
   let itemsList = [];
 
   $addBtnEl.on('click', onAddBtn);
-  $listItemsEl.on('click', '.' + REMOVE_BTN_CLASS, onRemoveBtnClick);
-  $listItemsEl.on('change', '.' + TEXTAREA_CLASS, onChangelistItemsEl);
 
   init();
 
@@ -22,7 +45,7 @@ $(() => {
   }
 
   function onAddBtn() {
-    addItem();
+    openModal();
   }
 
   function onRemoveBtnClick() {
@@ -32,11 +55,18 @@ $(() => {
   }
 
   function onChangelistItemsEl() {
+    let $element = $(this);
+
     updateTextarea(
-      $(this).closest('.' + ITEM_CLASS).data('id'),
-      $(this).data('name'),
-      $(this).val()
+      $element.closest('.' + ITEM_CLASS).data('id'),
+      $element.data('name'),
+      $element.val()
     );
+  }
+
+  function openModal() {
+    console.log('open');
+    $dialog.dialog('open');
   }
 
   function getItems() {
@@ -48,17 +78,13 @@ $(() => {
 
   function renderItems(list) {
     $listItemsEl.html(
-      list.map((item) => $stickerTemplate
+      list.map((item) => stickerTemplate
         .replace('{{id}}', item.id)
         .replace('{{description}}', item.description)
       ).join(''));
   }
 
-  function addItem() {
-    const item = {
-      description: '',
-    };
-
+  function addItem(item) {
     fetch(URL, {
       method: 'POST',
       body: JSON.stringify(item),

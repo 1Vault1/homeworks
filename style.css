@@ -44,7 +44,7 @@ body {
   padding: 0 10px 10px;
 }
 
-.textarea {
+textarea {
   display: block;
   width: max-content;
   padding: 5px;
@@ -58,11 +58,11 @@ body {
   margin: 10px 10px 0;
 }
 
-.textarea :focus {
+textarea :focus {
   box-shadow: 0 0 10px #133167;
 }
 
-.textarea ::placeholder {
+textarea ::placeholder {
   color: #fff;
 }
 
