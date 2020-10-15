@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="jquery/jquery-ui.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="jquery/jquery-ui.js"></script>
+  <script src="js/script.js" async></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="button-holder">
+      <button id="addBtn" class="add-button">ADD CONTACT</button>
+    </div>
+  </header>
+  <main class="main">
+    <section class="contacts-holder">
+      <div class="container">
+        <div class="contacts-list">
+          <div class="row head-row">
+            <div class="head-item">
+              <p>Name</p>
+            </div>
+            <div class="head-item">
+              <p>Surname</p>
+            </div>
+            <div class="head-item">
+              <p>Phone</p>
+            </div>
+            <div class="head-item">
+              <p>Action</p>
+            </div>
+          </div>
+          <div id="contactsList" class="list">
+
+          </div>
+        </div>
+      </div>
+
+      <div id="dialogForm" title="Add contact">
+        <p class="validateTips">Enter new Contact</p>
+
+        <form id="addContactForm" class="input-holder">
+          <input id="contactsInputName" class="input-item" type="text" placeholder="Name">
+          <input id="contactsInputId" class="input-item" type="hidden">
+          <input id="contactsInputSurname" class="input-item" type="text" placeholder="Surname">
+          <input id="contactsInputPhone" class="input-item" type="text" placeholder="Phone">
+        </form>
+      </div>
+
+  </main>
+
+  <script type="text/template" id="contactsItemTemplate">
+    <div class="row" data-id="{{id}}">
+      <div class="item" data-input-name="contactsInputName">{{name}}</div>
+        <div class="item" data-input-surname="contactsInputSurname">{{surname}}</div>
+        <div class="item" data-input-phone="contactsInputPhone">{{phone}}</div>
+        <div class="item">
+          <button class="edit-btn">edit</button>
+          <button class="remove-btn">X</button>
+        </div>
+    </div>
+  </script>
+</body>
+
+</html>
