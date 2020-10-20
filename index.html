@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
   <link rel="stylesheet" href="styles/style.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="js/script.js"></script>
   <script src="fancybox/jquery.fancybox.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -17,12 +17,13 @@
   <main class="main">
     <section class="albums-holder">
       <div class="container">
-        <div id="photos" class="photos"></div>
+        <div id="photos" class="photos imglist">
+        </div>
       </div>
   </main>
 
   <script type="text/template" id="photosTemplate">
-    <a class="photo" data-fancybox="gallery" href="{{url}}">
+    <a class="photo" href="{{url}}" data-fancybox="gallery" data-caption="{{title}}">
       <img src="{{url}}">
     </a>
   </script>
