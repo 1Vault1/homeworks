@@ -14,7 +14,7 @@ class TodoController {
       });
 
     this.formView = new TodoFormView({
-      addContact: (data) => this.addContact(data),
+      addContact: (contact) => this.addContact(contact),
     });
   }
 
