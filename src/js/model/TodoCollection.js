@@ -30,15 +30,17 @@ class TodoCollection {
     });
   }
 
-  add(contact) {
+  add(newTask) {
+    newTask.isDone = false;
+
     return fetch(TODOS_URL, {
       method: 'POST',
+      body: JSON.stringify(newTask),
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(contact)
     })
       .then(res => res.json())
-      .then(this.list.push(contact));
+      .then(task => this.list.push(task));
   }
 }
