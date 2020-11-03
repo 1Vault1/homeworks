@@ -1,0 +1,79 @@
+*{
+  box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #123269;
+  background-color: #fefefe;
+  background-image: linear-gradient(#849ED2 0%, #123269 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.main {
+  padding: 30px;
+}
+
+.albums-holder {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.albums {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 4px;
+  border: 1px solid #BAC0D2;
+}
+
+.title-album {
+  padding: 10px;
+  border-bottom: 1px solid #BAC0D2;
+  transition: all 1s ease-out;
+}
+
+.title-album:hover,
+.title-album.active {
+  background: #BAC0D2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.photo {
+  max-width: 200px;
+  width: 100%;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.photo img {
+  width: 100%;
+}
