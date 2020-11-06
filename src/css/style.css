@@ -1,0 +1,103 @@
+*{
+  box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background-color: #fefefe;
+  background-image: linear-gradient(#849ED2 0%, #123269 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 15px;
+  margin: 0;
+  min-height: 100vh;
+  color: #000;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  padding: 15px;
+  height: 600px;
+  overflow-y: auto;
+}
+
+form{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #A2B9D6;
+  transition: all 1s ease-out;
+  font-size: 16px;
+  color: #fff;
+  margin-right: 5px;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #133167;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.add-button {
+  background: #5575AD;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  outline: none;
+  border: none;
+  transition: all 1s ease-out;
+  padding: 5px;
+}
+
+.add-button:hover {
+  box-shadow: 0 0 10px #133167;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
